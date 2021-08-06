@@ -263,8 +263,10 @@ with open('output_data.csv', 'r', encoding="utf-8") as file:
     reader = csv.reader(file, delimiter=',')
     rows = list(file)
 
+    random_line_index = secrets.randbelow(len(authors))
+
     print(rows[8])
     print(titles[7].text)
-
+    print(random_line_index)
 time.sleep(15)
 browser.quit()
