@@ -1,6 +1,6 @@
 [ {
-  "buildOrder" : 2,
-  "reportUrl" : "https://samsepi0l-2.github.io/conduit/2/",
+  "buildOrder" : 3,
+  "reportUrl" : "https://samsepi0l-2.github.io/conduit/3/",
   "reportName" : "Allure Report with history",
   "data" : {
     "run" : 0,
