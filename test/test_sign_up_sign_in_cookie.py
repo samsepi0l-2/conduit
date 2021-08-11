@@ -249,6 +249,7 @@ class TestConduitakarmi(object):
 # data to file
     def test_data_to_file(self):
         login(self.driver)
+        time.sleep(2)
         authors = self.driver.find_elements_by_xpath("//a[@class = 'author']")
         titles = self.driver.find_elements_by_xpath("//a[@class = 'preview-link']/h1")
         summaries = self.driver.find_elements_by_xpath("//a[@class = 'preview-link']/p")
