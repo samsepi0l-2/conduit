@@ -1,0 +1,165 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "children" : [ {
+    "name" : "test.test_sign_up_sign_in_cookie",
+    "children" : [ {
+      "name" : "test_registration_rossz",
+      "uid" : "26ce0c4b29b63945",
+      "parentUid" : "834bd31e104a2f0d7eb941329f5a32a1",
+      "status" : "broken",
+      "time" : {
+        "start" : 1628717224370,
+        "stop" : 1628717224370,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_cookies",
+      "uid" : "9dc144ad90f8ec5a",
+      "parentUid" : "834bd31e104a2f0d7eb941329f5a32a1",
+      "status" : "broken",
+      "time" : {
+        "start" : 1628717234579,
+        "stop" : 1628717234579,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_test_reg_jo",
+      "uid" : "a85b6c6723be0e75",
+      "parentUid" : "834bd31e104a2f0d7eb941329f5a32a1",
+      "status" : "broken",
+      "time" : {
+        "start" : 1628717235933,
+        "stop" : 1628717235933,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_logout",
+      "uid" : "d0dbaa97e2ac42ea",
+      "parentUid" : "834bd31e104a2f0d7eb941329f5a32a1",
+      "status" : "broken",
+      "time" : {
+        "start" : 1628717237269,
+        "stop" : 1628717237269,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_signin",
+      "uid" : "c6e09aa3c88ce102",
+      "parentUid" : "834bd31e104a2f0d7eb941329f5a32a1",
+      "status" : "broken",
+      "time" : {
+        "start" : 1628717238601,
+        "stop" : 1628717238601,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_new_post",
+      "uid" : "33a71729ae113516",
+      "parentUid" : "834bd31e104a2f0d7eb941329f5a32a1",
+      "status" : "broken",
+      "time" : {
+        "start" : 1628717239943,
+        "stop" : 1628717239943,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_edit_a",
+      "uid" : "c08920bc46d92417",
+      "parentUid" : "834bd31e104a2f0d7eb941329f5a32a1",
+      "status" : "broken",
+      "time" : {
+        "start" : 1628717241273,
+        "stop" : 1628717241273,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_del_article",
+      "uid" : "a390b858aa87dc6e",
+      "parentUid" : "834bd31e104a2f0d7eb941329f5a32a1",
+      "status" : "broken",
+      "time" : {
+        "start" : 1628717242614,
+        "stop" : 1628717242614,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_data_from_file",
+      "uid" : "a1e53377acd2efe3",
+      "parentUid" : "834bd31e104a2f0d7eb941329f5a32a1",
+      "status" : "broken",
+      "time" : {
+        "start" : 1628717244014,
+        "stop" : 1628717244014,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_data_to_file",
+      "uid" : "47671ebcfca78fc",
+      "parentUid" : "834bd31e104a2f0d7eb941329f5a32a1",
+      "status" : "broken",
+      "time" : {
+        "start" : 1628717245383,
+        "stop" : 1628717245383,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_listing",
+      "uid" : "ef4c16b5de20e55a",
+      "parentUid" : "834bd31e104a2f0d7eb941329f5a32a1",
+      "status" : "broken",
+      "time" : {
+        "start" : 1628717246722,
+        "stop" : 1628717246722,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_pagination",
+      "uid" : "bc64433f78cac640",
+      "parentUid" : "834bd31e104a2f0d7eb941329f5a32a1",
+      "status" : "broken",
+      "time" : {
+        "start" : 1628717248051,
+        "stop" : 1628717248051,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "test.test_sign_up_sign_in_cookie"
+  } ],
+  "name" : "packages"
+}
