@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "FileNotFoundError: [Errno 2] No such file or directory: 'input_data.txt'",
+      "children" : [ {
+        "name" : "test_data_from_file",
+        "uid" : "3a4761b03fbe136f",
+        "parentUid" : "044ece6ad4e6f9cb0a262556b7689a14",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628721127434,
+          "stop" : 1628721132416,
+          "duration" : 4982
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "044ece6ad4e6f9cb0a262556b7689a14"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
