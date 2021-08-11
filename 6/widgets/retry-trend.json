@@ -1,9 +1,0 @@
-[ {
-  "buildOrder" : 6,
-  "reportUrl" : "https://samsepi0l-2.github.io/conduit/6/",
-  "reportName" : "Allure Report with history",
-  "data" : {
-    "run" : 12,
-    "retry" : 0
-  }
-} ]
