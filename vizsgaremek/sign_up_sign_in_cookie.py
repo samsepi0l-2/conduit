@@ -1,8 +1,10 @@
+
 import secrets
 import time
 import csv
 
 from selenium import webdriver
+from common_steps import *
 import os.path
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
@@ -29,7 +31,6 @@ username_good_format = "Tesztjozsef"
 email_good_format = f"{random_email_token}@jozsef.hu"
 email_bad_format = "jozsef"
 password_good_format = "ASDFasdf123"
-password_bad_format = "asdf"
 
 username_reg_field.send_keys(username_good_format)
 email_reg_field.send_keys(email_bad_format)
@@ -43,10 +44,11 @@ wrong_email_msg = "Email must be a valid email."
 taken_email_msg = "Email already taken. "
 wrong_password_msg = "Password must be 8 characters long and include 1 number, 1 uppercase letter, and 1 lowercase letter. "
 assert swal_text.text == wrong_email_msg
-
-## cookie test
 swal_ok_btn = browser.find_element_by_xpath("//button[@class = 'swal-button swal-button--confirm']")
 swal_ok_btn.click()
+
+## cookie test
+
 
 decline_btn = browser.find_element_by_xpath(
     "//button[@class= 'cookie__bar__buttons__button cookie__bar__buttons__button--decline']")
@@ -124,7 +126,9 @@ time.sleep(1)
 assert browser.get_cookie("drash_sess")["value"] != "null"
 
 navbar_all_item_logged_in = browser.find_elements_by_xpath("//li[@class= 'nav-item']")
-# username ellenérzés a random adatoknál
+# navbar_in(browser)
+
+# username ellenőrzés a random adatoknál
 # assert navbar_all_item_logged_in[3].text == username_good_format
 
 # username ellenőrzés az átmeneti égetett adatokkal
@@ -181,8 +185,6 @@ time.sleep(1)
 delete_btn = browser.find_element_by_xpath("//button[@class='btn btn-outline-danger btn-sm']")
 delete_btn.click()
 
-# delete_msg = browser.find_element_by_xpath("//div[@class='swal-overlay']/div/div")
-# print(delete_msg.text)
 time.sleep(2)
 titles_after_delete = browser.find_elements_by_xpath("//a[@class='preview-link']/h1")
 after_delete_list = []
@@ -235,10 +237,6 @@ for i in range(len(comment_lines) - 1, -1, -1):
 for k in comment_list:
     text_list.append(k.text)
 
-# ciklusok nélkül
-# assert comment_list[0].text == comment_lines[2].strip() and comment_list[1].text == comment_lines[1].strip() and \
-#        comment_list[2].text == comment_lines[0].strip()
-
 assert stripped_list == text_list
 
 delete_btn = browser.find_element_by_xpath("//button[@class='btn btn-outline-danger btn-sm']")
@@ -250,11 +248,8 @@ authors = browser.find_elements_by_xpath("//a[@class = 'author']")
 titles = browser.find_elements_by_xpath("//a[@class = 'preview-link']/h1")
 summaries = browser.find_elements_by_xpath("//a[@class = 'preview-link']/p")
 likes = browser.find_elements_by_xpath("//span[@class = 'counter']")
-# header = ['author', 'title', 'summary', 'number_of_likes']
 
 with open('output_data.csv', 'w', encoding='utf-8') as new_csv:
-    # writer = csv.writer(new_csv)
-    # writer.writerow(header)
     new_csv.write("author" + "," + "title" + "," + "summary" + "," + "number_of_likes" + "\n")
     for i in range(len(authors) - 1):
         new_csv.write(authors[i].text + "," + titles[i].text + "," + summaries[i].text + "," + likes[i].text + "\n")
@@ -263,10 +258,36 @@ with open('output_data.csv', 'r', encoding="utf-8") as file:
     reader = csv.reader(file, delimiter=',')
     rows = list(file)
 
-    random_line_index = secrets.randbelow(len(authors))
+    random_line_index = secrets.randbelow(len(authors)-1)
+    random_article = f"{authors[random_line_index].text},{titles[random_line_index].text},{summaries[random_line_index].text},{likes[random_line_index].text}\n"
+    random_file_line = rows[random_line_index+1]
+    assert random_article == random_file_line
 
-    print(rows[8])
-    print(titles[7].text)
-    print(random_line_index)
+# listing
+browser.get("http://conduitapp.progmasters.hu:1667/#/tag/lorem_tag")
+time.sleep(2)
+
+tags_in_article = browser.find_elements_by_xpath("//a[@class= 'preview-link']/div/a")
+articles_with_current_tag = browser.find_elements_by_xpath("//a[@class = 'preview-link']/h1")
+tag_counter = 0
+for i in range(len(tags_in_article)):
+    if "lorem_tag" in tags_in_article[i].text:
+        tag_counter += 1
+
+assert len(articles_with_current_tag) == tag_counter
+
+# pagination
+browser.back()
+time.sleep(2)
+page_btns = browser.find_elements_by_xpath("//ul[@class = 'pagination']/li/a")
+
+for i in range(len(page_btns)):
+    page_btns[i].click()
+
+time.sleep(1)
+current_page = browser.find_element_by_xpath("//li[@class = 'page-item active']/a")
+
+assert int(current_page.text) == len(page_btns)
+
 time.sleep(15)
 browser.quit()
