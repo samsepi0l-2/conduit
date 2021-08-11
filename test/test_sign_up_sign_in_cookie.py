@@ -296,3 +296,4 @@ class TestConduitakarmi(object):
         current_page = self.driver.find_element_by_xpath("//li[@class = 'page-item active']/a")
 
         assert int(current_page.text) == len(page_btns)
+
