@@ -284,7 +284,7 @@ class TestConduitakarmi(object):
 
         assert len(articles_with_current_tag) == tag_counter
 
-    # paginations
+    # pagination
     def test_pagination(self):
         login(self.driver)
         time.sleep(2)
