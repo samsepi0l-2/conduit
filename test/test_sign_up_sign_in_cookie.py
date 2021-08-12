@@ -255,12 +255,12 @@ class TestConduitakarmi(object):
         summaries = self.driver.find_elements_by_xpath("//a[@class = 'preview-link']/p")
         likes = self.driver.find_elements_by_xpath("//span[@class = 'counter']")
 
-        with open('output_data.csv', 'w', encoding='utf-8') as new_csv:
+        with open('test/output_data.csv', 'w', encoding='utf-8') as new_csv:
             new_csv.write("author" + "," + "title" + "," + "summary" + "," + "number_of_likes" + "\n")
             for i in range(len(authors) - 1):
                 new_csv.write(authors[i].text + "," + titles[i].text + "," + summaries[i].text + "," + likes[i].text + "\n")
 
-        with open('output_data.csv', 'r', encoding="utf-8") as file:
+        with open('test/output_data.csv', 'r', encoding="utf-8") as file:
             rows = list(file)
 
             random_line_index = secrets.randbelow(len(authors) - 1)
