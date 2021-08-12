@@ -1,0 +1,121 @@
+[ {
+  "uid" : "ad7fbd090325d3e8",
+  "name" : "test_data_to_file",
+  "time" : {
+    "start" : 1628777500356,
+    "stop" : 1628777510562,
+    "duration" : 10206
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "630a14589ff49a49",
+  "name" : "test_new_post",
+  "time" : {
+    "start" : 1628777457009,
+    "stop" : 1628777461827,
+    "duration" : 4818
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "95223915951ba78a",
+  "name" : "test_del_article",
+  "time" : {
+    "start" : 1628777473574,
+    "stop" : 1628777485540,
+    "duration" : 11966
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b533669bc1a734b5",
+  "name" : "test_signin",
+  "time" : {
+    "start" : 1628777454177,
+    "stop" : 1628777455488,
+    "duration" : 1311
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "bdc7e42bcbe22359",
+  "name" : "test_registration_rossz",
+  "time" : {
+    "start" : 1628777435229,
+    "stop" : 1628777437848,
+    "duration" : 2619
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4f3747da2eb17d4e",
+  "name" : "test_logout",
+  "time" : {
+    "start" : 1628777450417,
+    "stop" : 1628777451778,
+    "duration" : 1361
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6626ead42d5fdc36",
+  "name" : "test_pagination",
+  "time" : {
+    "start" : 1628777519255,
+    "stop" : 1628777524613,
+    "duration" : 5358
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "82791e9586d68308",
+  "name" : "test_listing",
+  "time" : {
+    "start" : 1628777513021,
+    "stop" : 1628777516819,
+    "duration" : 3798
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "89efbf05bb582e4b",
+  "name" : "test_edit_a",
+  "time" : {
+    "start" : 1628777464262,
+    "stop" : 1628777471128,
+    "duration" : 6866
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "cb9c51fc7a2ee669",
+  "name" : "test_test_reg_jo",
+  "time" : {
+    "start" : 1628777446315,
+    "stop" : 1628777448992,
+    "duration" : 2677
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "529a472d58c9542f",
+  "name" : "test_cookies",
+  "time" : {
+    "start" : 1628777440307,
+    "stop" : 1628777444903,
+    "duration" : 4596
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9733bea54853a66f",
+  "name" : "test_data_from_file",
+  "time" : {
+    "start" : 1628777487968,
+    "stop" : 1628777497935,
+    "duration" : 9967
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
