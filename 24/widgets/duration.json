@@ -1,0 +1,121 @@
+[ {
+  "uid" : "e29d48ffef6d97cb",
+  "name" : "test_edit_article",
+  "time" : {
+    "start" : 1628889056300,
+    "stop" : 1628889063285,
+    "duration" : 6985
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6f09990a77e79f00",
+  "name" : "test_data_to_file",
+  "time" : {
+    "start" : 1628889096481,
+    "stop" : 1628889107681,
+    "duration" : 11200
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1aeeed526e3e3a94",
+  "name" : "test_signin",
+  "time" : {
+    "start" : 1628889045315,
+    "stop" : 1628889046640,
+    "duration" : 1325
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e59b1289966d8b7",
+  "name" : "test_del_article",
+  "time" : {
+    "start" : 1628889064709,
+    "stop" : 1628889080535,
+    "duration" : 15826
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "30fcd57a7f253ae8",
+  "name" : "test_data_from_file",
+  "time" : {
+    "start" : 1628889081981,
+    "stop" : 1628889093999,
+    "duration" : 12018
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4fc616ebc359659a",
+  "name" : "test_bad_mail_registration",
+  "time" : {
+    "start" : 1628889026225,
+    "stop" : 1628889028624,
+    "duration" : 2399
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "fce0cf9bb9f82ef8",
+  "name" : "test_cookies",
+  "time" : {
+    "start" : 1628889030077,
+    "stop" : 1628889035288,
+    "duration" : 5211
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e2ae5725043a19db",
+  "name" : "test_new_post",
+  "time" : {
+    "start" : 1628889049088,
+    "stop" : 1628889053850,
+    "duration" : 4762
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7fecce2f640f67ee",
+  "name" : "test_logout",
+  "time" : {
+    "start" : 1628889042488,
+    "stop" : 1628889043880,
+    "duration" : 1392
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a2b1708cd4324ed6",
+  "name" : "test_listing",
+  "time" : {
+    "start" : 1628889109132,
+    "stop" : 1628889112935,
+    "duration" : 3803
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2aeb9fdeadc1cf54",
+  "name" : "test_good_registration",
+  "time" : {
+    "start" : 1628889037735,
+    "stop" : 1628889040598,
+    "duration" : 2863
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d4b5e6da2c756f6c",
+  "name" : "test_pagination",
+  "time" : {
+    "start" : 1628889115380,
+    "stop" : 1628889121013,
+    "duration" : 5633
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
