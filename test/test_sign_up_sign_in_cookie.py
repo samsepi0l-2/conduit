@@ -23,10 +23,8 @@ class TestConduitakarmi(object):
         self.driver.quit()
 
     def test_bad_mail_registration(self):
-        sign_up_nav_btn = self.driver.find_element_by_xpath("//li/a[@href='#/register']")
-        sign_up_nav_btn.click()
-        register_site = "http://conduitapp.progmasters.hu:1667/#/register"
-        assert self.driver.current_url == register_site
+        nav_out = navbar_out(self.driver)
+        nav_out[2].click()
 
         username_reg_field = self.driver.find_element_by_xpath("//input[@placeholder='Username']")
         email_reg_field = self.driver.find_element_by_xpath("//input[@placeholder='Email']")
@@ -42,8 +40,6 @@ class TestConduitakarmi(object):
         swal_text = self.driver.find_element_by_xpath("//div[@class= 'swal-text']")
 
         assert swal_text.text == wrong_email_msg
-        swal_ok_btn = self.driver.find_element_by_xpath("//button[@class = 'swal-button swal-button--confirm']")
-        swal_ok_btn.click()
 
     def test_cookies(self):
         # time.sleep(3)
@@ -104,16 +100,16 @@ class TestConduitakarmi(object):
     def test_signin(self):
         nav_out = navbar_out(self.driver)
         nav_out[1].click()
-        login_site = "http://conduitapp.progmasters.hu:1667/#/login" #ezt ki a databa
+
         assert self.driver.current_url == login_site
         assert self.driver.get_cookie("drash_sess")["value"] == "null"
 
         email_sign_in_field = self.driver.find_element_by_xpath("//input[@placeholder='Email']")
         password_sign_in_field = self.driver.find_element_by_xpath("//input[@placeholder='Password']")
         sign_in_send_btn = self.driver.find_element_by_xpath("//button[@class= 'btn btn-lg btn-primary pull-xs-right']")
-        # átmeneti égetett adatok postoláshoz és post törléséhez
-        email_sign_in_field.send_keys("jozsefteszt@jozsefteszt.hu")
-        password_sign_in_field.send_keys("asdfASDF123")
+
+        email_sign_in_field.send_keys(permanent_email)
+        password_sign_in_field.send_keys(permanent_password)
         sign_in_send_btn.click()
 
         time.sleep(1)
