@@ -1,13 +1,6 @@
-import time
-import csv
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
-import os.path
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.common.by import By
 from datas import *
 from common_steps import *
 
@@ -22,6 +15,8 @@ class TestConduitakarmi(object):
     def teardown(self):
         self.driver.quit()
 
+    # A_TC_001
+    # Registration with bad e-mail format
     def test_bad_mail_registration(self):
         nav_out = navbar_out(self.driver)
         nav_out[2].click()
@@ -41,8 +36,9 @@ class TestConduitakarmi(object):
 
         assert swal_text.text == wrong_email_msg
 
+    # A_TC_002
+    # Cookie statement with accept and decline options
     def test_cookies(self):
-        # time.sleep(3)
         self.driver.maximize_window()
 
         decline_btn = self.driver.find_element_by_xpath(
@@ -56,6 +52,7 @@ class TestConduitakarmi(object):
         self.driver.delete_cookie("vue-cookie-accept-decline-cookie-policy-panel")
         self.driver.refresh()
         time.sleep(2)
+
         accept_btn = self.driver.find_element_by_xpath(
             "//button[@class= 'cookie__bar__buttons__button cookie__bar__buttons__button--accept']")
         accept_btn.click()
@@ -64,9 +61,12 @@ class TestConduitakarmi(object):
         assert cookie_accept["value"] == "accept"
         time.sleep(2)
 
+    # A_TC_003
+    # Registration with valid data
     def test_good_registration(self):
         nav_out = navbar_out(self.driver)
         nav_out[2].click()
+
         username_reg_field = self.driver.find_element_by_xpath("//input[@placeholder='Username']")
         email_reg_field = self.driver.find_element_by_xpath("//input[@placeholder='Email']")
         password_reg_field = self.driver.find_element_by_xpath("//input[@placeholder='Password']")
@@ -80,6 +80,8 @@ class TestConduitakarmi(object):
         time.sleep(2)
 
         success_reg_msg = self.driver.find_element_by_xpath("//div[@class='swal-text']")
+
+        # sweet alert window test
         assert success_reg_msg.text == "Your registration was successful!"
 
         reg_success_ok_btn = self.driver.find_element_by_xpath(
@@ -90,6 +92,8 @@ class TestConduitakarmi(object):
         nav_in = navbar_in(self.driver)
         assert nav_in[3].text == username_good_format
 
+    # A_TC_004
+    # Logout
     def test_logout(self):
         login(self.driver)
         nav_in = navbar_in(self.driver)
@@ -97,11 +101,16 @@ class TestConduitakarmi(object):
         session_cookie = self.driver.get_cookie("drash_sess")
         assert session_cookie["value"] == "null"
 
+    # A_TC_005
+    # Login with a permanent account
     def test_signin(self):
         nav_out = navbar_out(self.driver)
         nav_out[1].click()
 
+        # site url test
         assert self.driver.current_url == login_site
+
+        # session cookie test before login
         assert self.driver.get_cookie("drash_sess")["value"] == "null"
 
         email_sign_in_field = self.driver.find_element_by_xpath("//input[@placeholder='Email']")
@@ -113,11 +122,17 @@ class TestConduitakarmi(object):
         sign_in_send_btn.click()
 
         time.sleep(1)
+
+        # session cookie test after login
         assert self.driver.get_cookie("drash_sess")["value"] != "null"
+
         nav_in = navbar_in(self.driver)
+
+        # username test after login
         assert nav_in[3].text == "jozsefteszt"
 
-
+    # A_TC_006
+    # New blogpost
     def test_new_post(self):
         login(self.driver)
         nav_in=navbar_in(self.driver)
@@ -139,11 +154,13 @@ class TestConduitakarmi(object):
 
         time.sleep(2)
         article_url = self.driver.current_url
+
         assert article_url == "http://conduitapp.progmasters.hu:1667/#/articles/titleteszt3"
 
         delete_current_article(self.driver)
 
-    # edit article
+    # A_TC_007
+    # Edit article
     def test_edit_article(self):
         login(self.driver)
         new_article(self.driver)
@@ -159,18 +176,22 @@ class TestConduitakarmi(object):
         time.sleep(1)
 
         edited_contetnt = self.driver.find_element_by_xpath("//div[@class = 'row article-content']/div/div/p")
+
         assert edited_contetnt.text == "bodyteszt EDITED"
 
         delete_current_article(self.driver)
 
-    # delete article
+    # A_TC_008
+    # Delete article
     def test_del_article(self):
         login(self.driver)
         new_article(self.driver)
         article_url = self.driver.current_url
+
         nav_in = navbar_in(self.driver)
         nav_in[0].click()
         time.sleep(1)
+
         titles_before_delete = self.driver.find_elements_by_xpath("//a[@class='preview-link']/h1")
         before_delete_list = []
         for i in titles_before_delete:
@@ -180,8 +201,8 @@ class TestConduitakarmi(object):
         time.sleep(1)
 
         delete_current_article(self.driver)
-
         time.sleep(2)
+
         titles_after_delete = self.driver.find_elements_by_xpath("//a[@class='preview-link']/h1")
         after_delete_list = []
         for i in titles_after_delete:
