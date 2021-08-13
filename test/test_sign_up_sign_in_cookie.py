@@ -151,10 +151,9 @@ class TestConduitakarmi(object):
         article_body_field.send_keys("bodyteszt")
         article_tag_field.send_keys("tagteszt")
         article_publish_btn.click()
-
         time.sleep(2)
-        article_url = self.driver.current_url
 
+        article_url = self.driver.current_url
         assert article_url == "http://conduitapp.progmasters.hu:1667/#/articles/titleteszt3"
 
         delete_current_article(self.driver)
@@ -215,27 +214,28 @@ class TestConduitakarmi(object):
 
         assert deleted_title == "titleteszt3"
 
-    # data from file
+    # A_TC_009
+    # Comments from file
     def test_data_from_file(self):
         login(self.driver)
-
+        new_article(self.driver)
         # new post
-        nav_in= navbar_in(self.driver)
-        nav_in[1].click()
-        time.sleep(1)
-        article_title_field = self.driver.find_element_by_xpath("//input[@placeholder='Article Title']")
-        article_about_field = self.driver.find_element_by_xpath("//input[contains(@placeholder,'this article about')]")
-        article_body_field = self.driver.find_element_by_xpath("//textarea[@placeholder='Write your article (in markdown)']")
-        article_tag_field = self.driver.find_element_by_xpath("//input[@placeholder='Enter tags']")
-        article_publish_btn = self.driver.find_element_by_xpath("//button[@class= 'btn btn-lg pull-xs-right btn-primary']")
-
-        article_title_field.send_keys("commentitle")
-        article_about_field.send_keys("commentabout")
-        article_body_field.send_keys("commnetbody")
-        article_tag_field.send_keys("commentag")
-        article_publish_btn.click()
-
+        # nav_in= navbar_in(self.driver)
+        # nav_in[1].click()
+        # time.sleep(1)
+        # article_title_field = self.driver.find_element_by_xpath("//input[@placeholder='Article Title']")
+        # article_about_field = self.driver.find_element_by_xpath("//input[contains(@placeholder,'this article about')]")
+        # article_body_field = self.driver.find_element_by_xpath("//textarea[@placeholder='Write your article (in markdown)']")
+        # article_tag_field = self.driver.find_element_by_xpath("//input[@placeholder='Enter tags']")
+        # article_publish_btn = self.driver.find_element_by_xpath("//button[@class= 'btn btn-lg pull-xs-right btn-primary']")
+        #
+        # article_title_field.send_keys("commentitle")
+        # article_about_field.send_keys("commentabout")
+        # article_body_field.send_keys("commnetbody")
+        # article_tag_field.send_keys("commentag")
+        # article_publish_btn.click()
         time.sleep(2)
+
         # comments sending
         comment_field = self.driver.find_element_by_xpath("//textarea[@placeholder='Write a comment...']")
         comment_btn = self.driver.find_element_by_xpath("//div[@class= 'card-footer']/button")
@@ -252,6 +252,7 @@ class TestConduitakarmi(object):
         comment_list = self.driver.find_elements_by_xpath("//p[@class = 'card-text']")
         stripped_list = []
         text_list = []
+
         for i in range(len(comment_lines) - 1, -1, -1):
             stripped_list.append(comment_lines[i].strip())
 
@@ -263,7 +264,8 @@ class TestConduitakarmi(object):
         delete_current_article(self.driver)
         time.sleep(2)
 
-# data to file
+    # A_TC_010
+    # Save global feed articles data to file
     def test_data_to_file(self):
         login(self.driver)
         time.sleep(2)
@@ -284,24 +286,27 @@ class TestConduitakarmi(object):
 
             random_article = f"{authors[random_line_index].text},{titles[random_line_index].text},{summaries[random_line_index].text},{likes[random_line_index].text}\n"
             random_file_line = rows[random_line_index + 1]
+
             assert random_article == random_file_line
 
-    # listig
+    # A_TC_011
+    # Filtered article list by tag
     def test_listing(self):
         login(self.driver)
-        self.driver.get("http://conduitapp.progmasters.hu:1667/#/tag/lorem_tag")
+        self.driver.get(f"http://conduitapp.progmasters.hu:1667/#/tag/{tested_tag}")
         time.sleep(2)
 
         tags_in_article = self.driver.find_elements_by_xpath("//a[@class= 'preview-link']/div/a")
         articles_with_current_tag = self.driver.find_elements_by_xpath("//a[@class = 'preview-link']/h1")
         tag_counter = 0
         for i in range(len(tags_in_article)):
-            if "lorem_tag" in tags_in_article[i].text:
+            if tested_tag in tags_in_article[i].text:
                 tag_counter += 1
 
         assert len(articles_with_current_tag) == tag_counter
 
-    # pagination
+    # A_TC_012
+    # Pagination
     def test_pagination(self):
         login(self.driver)
         time.sleep(2)
