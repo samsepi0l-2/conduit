@@ -219,21 +219,6 @@ class TestConduitakarmi(object):
     def test_data_from_file(self):
         login(self.driver)
         new_article(self.driver)
-        # new post
-        # nav_in= navbar_in(self.driver)
-        # nav_in[1].click()
-        # time.sleep(1)
-        # article_title_field = self.driver.find_element_by_xpath("//input[@placeholder='Article Title']")
-        # article_about_field = self.driver.find_element_by_xpath("//input[contains(@placeholder,'this article about')]")
-        # article_body_field = self.driver.find_element_by_xpath("//textarea[@placeholder='Write your article (in markdown)']")
-        # article_tag_field = self.driver.find_element_by_xpath("//input[@placeholder='Enter tags']")
-        # article_publish_btn = self.driver.find_element_by_xpath("//button[@class= 'btn btn-lg pull-xs-right btn-primary']")
-        #
-        # article_title_field.send_keys("commentitle")
-        # article_about_field.send_keys("commentabout")
-        # article_body_field.send_keys("commnetbody")
-        # article_tag_field.send_keys("commentag")
-        # article_publish_btn.click()
         time.sleep(2)
 
         # comments sending
