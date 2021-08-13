@@ -35,6 +35,12 @@ docker-compose up -d
 
 Navigate to `localhost:1667`
 
+If you are not using this docker setup, You can visit the hosted version: http://conduitapp.progmasters.hu:1667/#/
+
+# Test suite
+
+The test suite in this repository has been using the hosted website for test run, without a dockerization application.
+
 # Features
 
 - [x] Docker compose environment
