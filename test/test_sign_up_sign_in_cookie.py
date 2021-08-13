@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
@@ -185,11 +187,12 @@ class TestConduitakarmi(object):
     def test_del_article(self):
         login(self.driver)
         new_article(self.driver)
+        time.sleep(2)
         article_url = self.driver.current_url
 
         nav_in = navbar_in(self.driver)
         nav_in[0].click()
-        time.sleep(1)
+        time.sleep(2)
 
         titles_before_delete = self.driver.find_elements_by_xpath("//a[@class='preview-link']/h1")
         before_delete_list = []
