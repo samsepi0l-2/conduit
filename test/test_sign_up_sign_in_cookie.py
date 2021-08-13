@@ -22,7 +22,7 @@ class TestConduitakarmi(object):
     def teardown(self):
         self.driver.quit()
 
-    def test_registration_rossz(self):
+    def test_bad_mail_registration(self):
         sign_up_nav_btn = self.driver.find_element_by_xpath("//li/a[@href='#/register']")
         sign_up_nav_btn.click()
         register_site = "http://conduitapp.progmasters.hu:1667/#/register"
@@ -68,7 +68,7 @@ class TestConduitakarmi(object):
         assert cookie_accept["value"] == "accept"
         time.sleep(2)
 
-    def test_test_reg_jo(self):
+    def test_good_registration(self):
         nav_out = navbar_out(self.driver)
         nav_out[2].click()
         username_reg_field = self.driver.find_element_by_xpath("//input[@placeholder='Username']")
@@ -148,7 +148,7 @@ class TestConduitakarmi(object):
         delete_current_article(self.driver)
 
     # edit article
-    def test_edit_a(self):
+    def test_edit_article(self):
         login(self.driver)
         new_article(self.driver)
 
@@ -255,12 +255,12 @@ class TestConduitakarmi(object):
         summaries = self.driver.find_elements_by_xpath("//a[@class = 'preview-link']/p")
         likes = self.driver.find_elements_by_xpath("//span[@class = 'counter']")
 
-        with open('test/output_data.csv', 'w', encoding='utf-8') as new_csv:
+        with open('output_data.csv', 'w', encoding='utf-8') as new_csv:
             new_csv.write("author" + "," + "title" + "," + "summary" + "," + "number_of_likes" + "\n")
             for i in range(len(authors) - 1):
                 new_csv.write(authors[i].text + "," + titles[i].text + "," + summaries[i].text + "," + likes[i].text + "\n")
 
-        with open('test/output_data.csv', 'r', encoding="utf-8") as file:
+        with open('output_data.csv', 'r', encoding="utf-8") as file:
             rows = list(file)
 
             random_line_index = secrets.randbelow(len(authors) - 1)
