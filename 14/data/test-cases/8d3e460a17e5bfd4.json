@@ -1,0 +1,78 @@
+{
+  "uid" : "8d3e460a17e5bfd4",
+  "name" : "test_edit_a",
+  "fullName" : "test.test_sign_up_sign_in_cookie.TestConduitakarmi#test_edit_a",
+  "historyId" : "e604c30558e4975dc72e5480495d5ea7",
+  "time" : {
+    "start" : 1628875294839,
+    "stop" : 1628875302200,
+    "duration" : 7361
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "16b9b71077842aa0",
+      "name" : "log",
+      "source" : "16b9b71077842aa0.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "1380650d2b4b16ac",
+      "name" : "stderr",
+      "source" : "1380650d2b4b16ac.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_sign_up_sign_in_cookie"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestConduitakarmi"
+  }, {
+    "name" : "host",
+    "value" : "fv-az39-798"
+  }, {
+    "name" : "thread",
+    "value" : "4234-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_sign_up_sign_in_cookie"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "8d3e460a17e5bfd4.json",
+  "parameterValues" : [ ]
+}
