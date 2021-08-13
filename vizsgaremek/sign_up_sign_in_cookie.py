@@ -47,7 +47,7 @@ assert swal_text.text == wrong_email_msg
 swal_ok_btn = browser.find_element_by_xpath("//button[@class = 'swal-button swal-button--confirm']")
 swal_ok_btn.click()
 
-## cookie test
+## cookie test.
 
 
 decline_btn = browser.find_element_by_xpath(
